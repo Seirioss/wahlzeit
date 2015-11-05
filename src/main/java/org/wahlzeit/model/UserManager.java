@@ -83,7 +83,7 @@ public class UserManager extends ClientManager {
 	 */
 	public void loadExistingUsers() {
 		ObjectifyService.run(new Work<Void>() {
-			@Override
+			
 			public Void run() {
 				Collection<User> existingUser = new ArrayList<User>();
 				readObjects(existingUser, User.class);

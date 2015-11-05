@@ -37,7 +37,6 @@ public abstract class AbstractEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public void sendEmail(EmailAddress from, EmailAddress to, String subject, String body) throws MailingException {
 		sendEmail(from, to, EmailAddress.EMPTY, subject, body);
 	}
@@ -45,7 +44,6 @@ public abstract class AbstractEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public boolean sendEmailIgnoreException(EmailAddress from, EmailAddress to, String subject, String body) {
 		return sendEmailIgnoreException(from, to, EmailAddress.EMPTY, subject, body);
 	}
@@ -53,7 +51,6 @@ public abstract class AbstractEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public void sendEmail(EmailAddress from, EmailAddress to, EmailAddress bcc, String subject, String body) throws
 			MailingException {
 		assertIsValidEmailAddress(from, "from");
@@ -68,7 +65,7 @@ public abstract class AbstractEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
+	
 	public boolean sendEmailIgnoreException(EmailAddress from, EmailAddress to, EmailAddress bcc, String subject,
 											String body) {
 		try {

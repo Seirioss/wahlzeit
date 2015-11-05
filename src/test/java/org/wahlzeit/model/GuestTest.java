@@ -29,7 +29,7 @@ public class GuestTest {
 		assertNewGuestHasId(++clientId);
 		// creation of user should not consume a next id
 		ObjectifyService.run(new Work<Void>() {
-			@Override
+			
 			public Void run() {
 				new User("1337", "han", "star@wa.rs");
 				return null;
@@ -46,7 +46,7 @@ public class GuestTest {
 
 	protected void assertNewGuestHasId(int id) {
 		Guest testGuest = ObjectifyService.run(new Work<Guest>() {
-			@Override
+			
 			public Guest run() {
 				return new Guest();
 			}

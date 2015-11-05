@@ -31,7 +31,6 @@ public class GlobalsManager extends ObjectManager {
 	public void loadGlobals() {
 		initGlobals();
 		Globals globals = ObjectifyService.run(new Work<Globals>() {
-			@Override
 			public Globals run() {
 				return readObject(Globals.class, Globals.DEAULT_ID);
 			}
@@ -58,7 +57,7 @@ public class GlobalsManager extends ObjectManager {
 	 */
 	private boolean hasGlobals() {
 		return ObjectifyService.run(new Work<Boolean>() {
-			@Override
+			
 			public Boolean run() {
 				return ofy().load().type(Globals.class).first().now() != null;
 			}
@@ -77,7 +76,7 @@ public class GlobalsManager extends ObjectManager {
 	 */
 	private void createDefaultGlobals() {
 		ObjectifyService.run(new Work<Boolean>() {
-			@Override
+			
 			public Boolean run() {
 				Globals globals = new Globals();
 				globals.setLastUserId(Globals.DEAULT_ID);
@@ -102,7 +101,7 @@ public class GlobalsManager extends ObjectManager {
 		log.info(globals.asString());
 
 		ObjectifyService.run(new Work<Void>() {
-			@Override
+			
 			public Void run() {
 				writeObject(globals);
 				return null;

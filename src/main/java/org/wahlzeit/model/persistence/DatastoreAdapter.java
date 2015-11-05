@@ -52,7 +52,7 @@ public class DatastoreAdapter extends ImageStorage {
 			imageWrapper.setImage((Image) image);
 
 			ObjectifyService.run(new Work<Boolean>() {
-				@Override
+				
 				public Boolean run() {
 					OfyService.ofy().save().entity(imageWrapper).now();
 					return null;
@@ -72,7 +72,7 @@ public class DatastoreAdapter extends ImageStorage {
 		Image result = null;
 
 		ImageWrapper imageWrapper = ObjectifyService.run(new Work<ImageWrapper>() {
-			@Override
+		
 			public ImageWrapper run() {
 				return OfyService.ofy().load().type(ImageWrapper.class).id(photoIdAsString + size).now();
 			}

@@ -154,7 +154,7 @@ public class PhotoManager extends ObjectManager {
 	 */
 	public void loadPhotos() {
 		Collection<Photo> existingPhotos = ObjectifyService.run(new Work<Collection<Photo>>() {
-			@Override
+			
 			public Collection<Photo> run() {
 				Collection<Photo> existingPhotos = new ArrayList<Photo>();
 				readObjects(existingPhotos, Photo.class);

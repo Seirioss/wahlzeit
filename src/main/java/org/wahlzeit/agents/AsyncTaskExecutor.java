@@ -1,14 +1,15 @@
 package org.wahlzeit.agents;
 
+import static com.google.appengine.api.taskqueue.RetryOptions.Builder.withTaskRetryLimit;
+
+import java.util.logging.Logger;
+
+import org.wahlzeit.model.Photo;
+
 import com.google.appengine.api.taskqueue.Queue;
 import com.google.appengine.api.taskqueue.QueueFactory;
 import com.google.appengine.api.taskqueue.RetryOptions;
 import com.google.appengine.api.taskqueue.TaskOptions;
-import org.wahlzeit.model.Photo;
-
-import java.util.logging.Logger;
-
-import static com.google.appengine.api.taskqueue.RetryOptions.Builder.withTaskRetryLimit;
 
 /**
  * Class to combine all calls for async task to use Task API from Google.

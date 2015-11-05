@@ -34,7 +34,7 @@ public class UserSessionProvider extends ExternalResource {
 		HttpSession httpSession = mock(HttpSession.class);
 		when(httpSession.getAttribute(UserSession.INITIALIZED)).thenReturn(UserSession.INITIALIZED);
 		String guestName = ObjectifyService.run(new Work<String>() {
-			@Override
+			
 			public String run() {
 				Guest guest = new Guest();
 				guest.setLanguage(Language.ENGLISH);

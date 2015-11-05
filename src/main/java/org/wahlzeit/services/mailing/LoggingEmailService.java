@@ -47,7 +47,6 @@ public class LoggingEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public void sendEmail(EmailAddress from, EmailAddress to, String subject, String body) throws MailingException {
 		String fromString = (from == null) ? "null" : from.asString();
 		String toString = (to == null) ? "null" : to.asString();
@@ -65,7 +64,6 @@ public class LoggingEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public boolean sendEmailIgnoreException(EmailAddress from, EmailAddress to, String subject, String body) {
 		try {
 			sendEmail(from, to, subject, body);
@@ -79,7 +77,6 @@ public class LoggingEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public void sendEmail(EmailAddress from, EmailAddress to, EmailAddress bcc, String subject, String body)
 			throws MailingException {
 		String fromString = (from == null) ? "null" : from.asString();
@@ -100,7 +97,6 @@ public class LoggingEmailService implements EmailService {
 	/**
 	 *
 	 */
-	@Override
 	public boolean sendEmailIgnoreException(EmailAddress from, EmailAddress to, EmailAddress bcc, String subject,
 											String body) {
 		try {
