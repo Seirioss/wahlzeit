@@ -6,6 +6,6 @@ public abstract class AbstractCoordinate implements Coordinate {
 	
 	public abstract Coordinate toSphericCoordinate();
 	
-	public abstract Coordinate toCartesianCoordinate()
+	public abstract Coordinate toCartesianCoordinate();
 	
 }

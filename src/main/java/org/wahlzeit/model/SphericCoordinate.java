@@ -22,7 +22,7 @@ public class SphericCoordinate extends AbstractCoordinate {
 			c2 = ((SphericCoordinate) co).longtitude;
 			return radius * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(Math.abs(latitude - c1) / 2), 2)
 					+ Math.cos(longtitude) * Math.cos(c2) * Math.pow(Math.sin(Math.abs(longtitude - c2) / 2), 2)));
-		}else return 0
+		}else return 0;
 	}
 
 	public boolean isEqual(Coordinate co) {
