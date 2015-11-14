@@ -14,7 +14,7 @@ public class CartesianCoordinate extends AbstractCoordinate{
 		this.z = z;
 	}
 
-	public double getDistance(CartesianCoordinate co) {
+	public double getDistance(Coordinate co) {
 		// TODO Auto-generated method stub
 		double c1, c2, c3;
 		if (co instanceof CartesianCoordinate) {
