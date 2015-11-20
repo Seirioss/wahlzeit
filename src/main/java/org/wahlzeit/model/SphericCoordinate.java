@@ -1,5 +1,6 @@
 package org.wahlzeit.model;
 
+import org.junit.Assert;
 
 public class SphericCoordinate extends AbstractCoordinate {
 	
@@ -12,22 +13,34 @@ public class SphericCoordinate extends AbstractCoordinate {
 		this.longtitude = longtitude;
 	}
 	
-	
+	public void assertClassInvariants() {
+		// TODO Auto-generated method stub
+		assert radius != 0;	
+	}
+
 
 	public double getDistance(Coordinate co) {
 		// TODO Auto-generated method stub
-		double c1, c2;
+		
+		assert co != null;
+		
+		double c1, c2, result;
 		if (co instanceof SphericCoordinate) {
 			c1 = ((SphericCoordinate) co).latitude;
 			c2 = ((SphericCoordinate) co).longtitude;
-			return radius * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(Math.abs(latitude - c1) / 2), 2)
+			result = radius * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(Math.abs(latitude - c1) / 2), 2)
 					+ Math.cos(longtitude) * Math.cos(c2) * Math.pow(Math.sin(Math.abs(longtitude - c2) / 2), 2)));
-		}else return 0;
+			Assert.assertTrue("sDistance Error!", result >= 0);
+			return result;
+		}else return 0;		
 	}
 
 	public boolean isEqual(Coordinate co) {
 		// TODO Auto-generated method stub
-		if (co.equals(this)) {
+		
+		assert co != null;
+		
+		if (((SphericCoordinate) co).latitude == latitude && ((SphericCoordinate) co).longtitude == longtitude) {
 			return true;
 		}else return false;
 	}
@@ -43,8 +56,10 @@ public class SphericCoordinate extends AbstractCoordinate {
 		x = 2 * radius * Math.cos(latitude) * Math.cos(longtitude);
 		y = 2 * radius * Math.cos(latitude) * Math.sin(longtitude);
 		z = 2 * radius * Math.sin(latitude);
-		return new CartesianCoordinate(x, y, z);
+		
+		CartesianCoordinate cc = new CartesianCoordinate(x, y, z);
+		Assert.assertTrue("sTransformation Error!", cc != null);
+		return cc;
 	}
 
-	
 }

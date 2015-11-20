@@ -6,4 +6,6 @@ public interface Coordinate {
 	
 	public boolean isEqual(Coordinate co);
 	
+	public void assertClassInvariants();
+	
 }
