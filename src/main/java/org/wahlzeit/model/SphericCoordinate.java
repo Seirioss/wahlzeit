@@ -9,6 +9,9 @@ public class SphericCoordinate extends AbstractCoordinate {
 	private double radius = RADIUS;
 	
 	public SphericCoordinate(double latitude, double longtitude) {
+		
+		assertClassInvariants();
+		
 		this.latitude = latitude;
 		this.longtitude = longtitude;
 	}
@@ -16,6 +19,8 @@ public class SphericCoordinate extends AbstractCoordinate {
 	public void assertClassInvariants() {
 		// TODO Auto-generated method stub
 		assert radius != 0;	
+		assert latitude <= 90;
+		assert longtitude <= 180;
 	}
 
 
