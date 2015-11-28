@@ -37,6 +37,13 @@ import java.util.logging.Logger;
 /**
  * The UserManager provides access to and manages Users (including Moderators and Administrators).
  */
+
+@Pattern(
+		name = "Abstract Factory", 
+        participants = { 
+        		"ConcreteFactory" }
+		)
+
 public class UserManager extends ClientManager {
 
 	private static final Logger log = Logger.getLogger(UserManager.class.getName());
@@ -67,6 +74,12 @@ public class UserManager extends ClientManager {
 	/**
 	 *
 	 */
+	
+	@Pattern (
+	       name = "Singleton", 
+	       participants = {""}
+			)
+	
 	public static UserManager getInstance() {
 		if (instance == null) {
 			instance = new UserManager();

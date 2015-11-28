@@ -2,6 +2,11 @@ package org.wahlzeit.model;
 
 import org.junit.Assert;
 
+@Pattern(
+		name = "Template", 
+		participants = { "ConcreteClass" }
+		)
+
 public class SphericCoordinate extends AbstractCoordinate {
 	
 	private double latitude = 0;

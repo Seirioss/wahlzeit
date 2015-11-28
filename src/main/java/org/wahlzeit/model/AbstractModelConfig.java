@@ -41,10 +41,14 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Logger;
 
+import javax.validation.constraints.Pattern;
+
 /**
  * A generic implementation of ModelConfig.
  * Subclasses provide the parameters and language-specific handling of text and data.
  */
+
+
 public abstract class AbstractModelConfig extends AbstractConfig implements ModelConfig, Serializable {
 
 	private static final Logger log = Logger.getLogger(AbstractModelConfig.class.getName());

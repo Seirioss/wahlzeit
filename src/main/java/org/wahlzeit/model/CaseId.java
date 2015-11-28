@@ -23,6 +23,7 @@ package org.wahlzeit.model;
 /**
  * Simple value object for case ids.
  */
+
 public class CaseId {
 
 	/**

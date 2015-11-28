@@ -4,6 +4,10 @@ import javax.security.auth.PrivateCredentialPermission;
 
 import org.junit.Assert;
 
+@Pattern(
+		name = "Template Method", 
+		participants = { "ConcreteClass" })
+
 public class CartesianCoordinate extends AbstractCoordinate{
 	
 	private double x;

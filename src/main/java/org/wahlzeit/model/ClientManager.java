@@ -14,6 +14,13 @@ import java.util.logging.Logger;
  * 
  * @review
  */
+
+@Pattern(
+		name = "Abstract Factory", 
+        participants = { 
+        		"AbstractFactory" }
+		)
+
 public abstract class ClientManager extends ObjectManager {
 
 	private static final Logger log = Logger.getLogger(ClientManager.class.getName());

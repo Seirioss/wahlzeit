@@ -41,6 +41,13 @@ import java.util.logging.Logger;
  * Users can have a home page which may be elsewhere on the web.
  */
 @Subclass(index = true)
+
+@Pattern(
+		name = "Abstract Factory", 
+        participants = { 
+        		"ConcreteProduct" }
+		)
+
 public class User extends Client {
 
 	/**
